@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bus Pass</title>
+  <link rel="stylesheet" href="/../CSS/style3.css" />
+  <style>
+    .go-back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .go-back-btn:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <button class="go-back-btn" onclick="history.back()">← Go Back</button>
+
+  <div class="bus-pass-container">
+    <div class="bus-pass-box">
+      <div class="pass-details">
+        <h2>Bus Pass</h2>
+        <p><strong>Name:</strong> ARYAN REDDY</p>
+        <p><strong>Roll No:</strong> 6922</p>
+        <p><strong>Bus Route:</strong> Route 5 - LB Nagar</p>
+        <p><strong>Branch:</strong> CSE-IOT</p>
+        <p><strong>Year:</strong> 3rd</p>
+      </div>
+      <div class="pass-image">
+        <img src="../images/pfp.jpg" alt="Profile Picture" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

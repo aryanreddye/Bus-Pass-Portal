@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('/images/regbg1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(77, 255, 0, 0.8);
+    max-width: 400px;
+    width: 90%;
+  }
+  
+ 
+  .register-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+    text-shadow: 0 0 10px rgb(64, 255, 0);
+  }
+  
+  
+  .register-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #ffffffcc;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .register-form input:focus {
+    box-shadow: 0 0 10px rgb(0, 255, 8);
+  }
+  
+  
+  .register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgb(0, 255, 64), 0 0 30px rgb(0, 255, 64);
+    transition: 0.3s;
+  }
+  
+  .register-form button:hover {
+    background-color: #15ff00;
+    box-shadow: 0 0 30px cyan, 0 0 60px cyan;
+  }
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #000000;
+    background-color: rgba(0, 255, 255, 0.3);
+    padding: 8px 14px;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px cyan;
+    transition: 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px cyan;
+  }
+  

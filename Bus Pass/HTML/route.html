@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Request</title>
+    <link rel="stylesheet" href="../CSS/style4.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1002;
+}
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+        }
+        nav {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    width: 100%;
+}   
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(129, 243, 97);
+}
+        .hamburger {
+            display: inline;
+            font-size: 30px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            right: 0px;
+            padding: 10px;
+            padding-left: 600px;
+        }
+        .bus-pass-heading {
+            margin-top: 100px;
+            font-size: 36px;
+            color: black;
+            text-shadow: 2px 2px 5px limegreen;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 7px;
+    
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+        .form-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: inline;
+                position: absolute;
+                left: 10px;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                background-color: black;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/htlogo.jpeg" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href="/renew.html">Renewal</a></li>
+                <li><a href="/route.html">Change Route</a></li>
+                <li><a href='/buspass.html'>Bus Pass</a></li>
+                <li><a href="/acc.html">Account</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger">&#9776;</button>
+    </header>
+    
+    <h1 class="bus-pass-heading">Bus Pass Request</h1>
+    
+    <main>
+        <section class="form-section">
+            <form id="busPassForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="roll">Roll Number:</label>
+                <input type="text" id="roll" required>
+                
+                <label for="branch">Branch:</label>
+                <select id="branch" required>
+                    <option>CSD</option>
+                    <option>CSO</option>
+                    <option>CSM</option>
+                    <option>CSE</option>
+                </select>
+                
+                <label for="year">Year:</label>
+                <select id="year" required>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                
+                <label for="pickup">Pickup Location:</label>
+                <select id="pickup" required>
+                    <option>Suchitra</option>
+                    <option>Nizampet</option>
+                    <option>Bowenpally</option>
+                    <option>Alwal</option>
+                </select>
+                
+                <label for="days">How many days:</label>
+                <input type="number" id="days" min="1" required>
+                
+                <label for="reason">Reason:</label>
+                <textarea id="reason" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <dialog id="confirmationDialog">
+            <p id="dialogText"></p>
+            <button id="okBtn">Okay</button>
+          </dialog>
+    </main>
+
+    <script>
+
+
+
+  
+const form = document.getElementById("busPassForm");
+    const dialog = document.getElementById("confirmationDialog");
+    const dialogText = document.getElementById("dialogText");
+    const okBtn = document.getElementById("okBtn");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const selectedRoute = document.getElementById("pickup").value;
+      dialogText.textContent = `Your request to change your bus route to ${selectedRoute} has been sent successfully. Wait for a few hours for the authority to validate your reason and allow the change.`;
+      dialog.showModal();
+    });
+
+    okBtn.addEventListener("click", function() {
+      dialog.close();
+      location.reload(); 
+    });
+    
+    document.querySelector(".hamburger").addEventListener("click", function() {
+    document.querySelector(".nav-links").classList.toggle("active");
+    });
+        
+    </script>
+</body>
+</html>

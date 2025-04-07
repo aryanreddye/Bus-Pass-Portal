@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Pass Renewal</title>
+    <link rel="stylesheet" href="../CSS/style4.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="htlogo.jpeg" alt="Logo">
+        </div>
+        <button class="hamburger">&#9776;</button>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href='/renew.html'>Renew</a></li>
+                <li><a href='/route.html'>Change Route</a></li>
+                <li><a href='/buspass.html'>Bus Pass</a></li>
+                <li><a href='/acc.html'>Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1 class="bus-pass-heading">BUS PASS RENEWAL</h1>
+
+    <main>
+        <section class="form-section">
+            <h2>Renew Your Pass</h2>
+            <form action="#" method="post" id="busPassForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="roll-number">Roll Number:</label>
+                <input type="text" id="roll-number" name="roll-number" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="pass-number">Pass Number:</label>
+                <input type="text" id="pass-number" name="pass-number" required>
+
+                <label for="branch">Branch:</label>
+                <select id="branch" name="branch" required>
+                    <option value="CSD">CSD</option>
+                    <option value="CSO">CSO</option>
+                    <option value="CSM">CSM</option>
+                    <option value="CSE">CSE</option>
+                </select>
+
+                <label for="year">Year:</label>
+                <select id="year" name="year" required>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+
+                <button type="submit" onclick="dialogshow()" id="sub">Submit</button>
+            </form>
+        </section>
+        <dialog id="successDialog">
+            <p>BUS PASS RENEWAL SUCCESSFUL</p>
+            <button id="okBtn">Okay</button>
+          </dialog>
+    </main>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+ 
+    const form = document.getElementById("busPassForm");
+    const dialog = document.getElementById("successDialog");
+    const okBtn = document.getElementById("okBtn");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+      dialog.showModal();     
+    });
+
+    okBtn.addEventListener("click", function() {
+      dialog.close();       
+      location.reload();     
+    });
+
+    </script>
+</body>
+</html>

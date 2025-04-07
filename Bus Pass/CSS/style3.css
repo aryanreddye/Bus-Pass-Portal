@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/images/bpbg.jpeg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bus-pass-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .bus-pass-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 750px;
+    color: #00ff66;
+  }
+  
+  .pass-details {
+    flex: 2;
+  }
+  
+  .pass-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00ff66;
+  }
+  
+  .pass-details p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .pass-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pass-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(0, 0, 0);
+  }
+  
+  @media (max-width: 768px) {
+    .bus-pass-box {
+      flex-direction: column;
+      text-align: center;
+      padding: 25px 20px;
+    }
+  
+    .pass-image {
+      margin-top: 20px;
+    }
+  
+    .pass-details h2 {
+      font-size: 24px;
+    }
+  }
+  
