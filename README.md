@@ -2,8 +2,7 @@
 
 Welcome to my **Bus Pass** web application!
 
-🚀 **Live Website:** [Check it out here]()  
-_(Replace with your actual deployed URL)_
+🚀 **Live Website:** [Check it out here](https://aryanreddye.github.io/buspass/)  
 
 ---
 
@@ -25,7 +24,6 @@ This is a **responsive web application** that simulates a digital bus pass syste
 ✅ Pop-up dialogs for actions  
 ✅ Navigation bar with hamburger menu  
 ✅ Pages: Register, Login, My Account, Bus Pass, and more
-
 ---
 
 ## ⚠️ Known Limitations
