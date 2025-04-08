@@ -2,7 +2,7 @@
 
 Welcome to my **Bus Pass** web application!
 
-🚀 **Live Website:** [Check it out here](https://aryanreddye.github.io/buspass/)  
+🚀 **Live Website:** [Check it out here](https://aryanreddye.github.io/Bus-Pass-Portal/)  
 
 ---
 
